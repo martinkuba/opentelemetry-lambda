@@ -39,7 +39,7 @@ jobs:
         shell: bash
         run: |
           unzip nodejs/packages/layer/build/layer.zip
-          SDK_VERSION=$(node scripts/version.js)
+          SDK_VERSION=$(node version.js)
           echo "SDK_VERSION=$SDK_VERSION" >> $GITHUB_OUTPUT
 
   publish-layer:

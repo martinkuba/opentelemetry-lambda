@@ -27,6 +27,7 @@ jobs:
       - name: Build
         run: |
           npm install
+        working-directory: nodejs
 
       - uses: actions/upload-artifact@v3
         name: Save assembled layer to build

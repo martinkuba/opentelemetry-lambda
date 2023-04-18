@@ -35,11 +35,15 @@ jobs:
           echo "SDK_VERSION=$SDK_VERSION" >> $GITHUB_OUTPUT
         working-directory: nodejs/packages/layer/scripts
 
+      - name: rename zip file
+        run: mv layer.zip opentelemetry-nodejs-layer.zip
+        working-directory: nodejs/packages/layer/build
+
       - uses: actions/upload-artifact@v3
         name: Save assembled layer to build
         with:
           name: opentelemetry-nodejs-layer.zip
-          path: nodejs/packages/layer/build/layer.zip
+          path: nodejs/packages/layer/build/opentelemetry-nodejs-layer.zip
 
   publish-layer:
     uses: ./.github/workflows/layer-publish.yml

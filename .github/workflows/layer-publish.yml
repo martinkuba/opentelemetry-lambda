@@ -74,6 +74,9 @@ jobs:
           aws-region: ${{ inputs.aws_region }}
           mask-aws-account-id: false
 
+      - name: temp
+        run: ls
+
       - name: Publish Lambda Layer
         run: |
           LAYER_ARN=$(

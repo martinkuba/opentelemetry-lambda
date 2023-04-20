@@ -29,7 +29,7 @@ jobs:
         working-directory: nodejs
 
       - name: Save Node SDK Version
-        id: save-node-version
+        id: save-node-sdk-version
         run: |
           SDK_VERSION=$(node version.js)
           echo "SDK_VERSION=$SDK_VERSION" >> $GITHUB_OUTPUT

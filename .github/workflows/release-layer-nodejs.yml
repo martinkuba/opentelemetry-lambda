@@ -31,7 +31,6 @@ jobs:
       - name: Save Node SDK Version
         id: save-node-sdk-version
         run: |
-          node version.js
           SDK_VERSION=$(node version.js)
           echo "SDK_VERSION=$SDK_VERSION" >> $GITHUB_OUTPUT
         working-directory: nodejs/packages/layer/scripts
@@ -71,7 +70,7 @@ jobs:
     with:
       artifact-name: opentelemetry-nodejs-layer.zip
       layer-name: opentelemetry-nodejs
-      component-version: ${{needs.build-layer.outputs.SDK_VERSION}}
+      component-version: ${{needs.build-layer.outputs.NODEJS_VERSION}}
       # architecture:
       release-group: dev
       aws_region: ${{ matrix.aws_region }}

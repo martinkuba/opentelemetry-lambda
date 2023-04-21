@@ -67,6 +67,9 @@ jobs:
         with:
           name: ${{ inputs.artifact-name }}
 
+      - name: list files
+        run: ls /home/runner/work/opentelemetry-lambda/opentelemetry-lambda
+
       - uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets.PROD_LAMBDA_ROLE_ARN }}

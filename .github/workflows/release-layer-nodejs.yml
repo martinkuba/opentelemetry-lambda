@@ -38,7 +38,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         name: Save assembled layer to build
         with:
-          name: layer.zip
+          name: opentelemetry-nodejs-layer.zip
           path: nodejs/packages/layer/build/layer.zip
 
   publish-layer:
@@ -64,7 +64,7 @@ jobs:
           - us-west-1
           - us-west-2
     with:
-      artifact-name: layer.zip
+      artifact-name: opentelemetry-nodejs-layer.zip
       layer-name: opentelemetry-nodejs
       component-version: ${{needs.build-layer.outputs.NODEJS_VERSION}}
       # architecture:
